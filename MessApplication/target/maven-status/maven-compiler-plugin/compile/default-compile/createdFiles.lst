@@ -1,0 +1,6 @@
+org\messplacement\messsecond\Entities\Student.class
+org\messplacement\messsecond\Dao\MessDao.class
+org\messplacement\messsecond\Service\MessService.class
+org\messplacement\messsecond\Service\MessServiceImpl.class
+org\messplacement\messsecond\MessSecondApplication.class
+org\messplacement\messsecond\Controller.class
