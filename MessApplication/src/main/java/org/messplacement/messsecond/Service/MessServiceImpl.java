@@ -86,11 +86,11 @@ public class MessServiceImpl implements MessService {
 
     @Override
     public String updateStudent(Student student) {
-        Optional<Student> existingStudent = messDao.findById(student.getReg());
+        Optional<Student> existingStudent = messDao.findById(student.getreg());
         if (existingStudent.isEmpty()) {
-            throw new RuntimeException("Student not found with registration: " + student.getReg());
+            throw new RuntimeException("Student not found with registration: " + student.getreg());
         }
-        messDao.deleteById(student.getReg());
+        messDao.deleteById(student.getreg());
         Student updatedStudent = calcTotal(student);
         messDao.save(updatedStudent);
         return "Updated successfully";
@@ -98,9 +98,9 @@ public class MessServiceImpl implements MessService {
 
     @Override
     public String deleteStudent(Student student) {
-        Optional<Student> existingStudent = messDao.findById(student.getReg());
+        Optional<Student> existingStudent = messDao.findById(student.getreg());
         if (existingStudent.isEmpty()) {
-            throw new RuntimeException("Student not found with registration: " + student.getReg());
+            throw new RuntimeException("Student not found with registration: " + student.getreg());
         }
         messDao.delete(student);
         return "Deleted successfully";
