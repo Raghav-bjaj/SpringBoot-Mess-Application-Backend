@@ -1,5 +1,5 @@
-# Use Java 17 base image with Maven for building
-FROM maven:3.8.6-openjdk-17-slim AS builder
+# Use Maven 3.9.6 with Java 17 for building
+FROM maven:3.9.6-openjdk-17 AS builder
 
 # Set working directory
 WORKDIR /app
