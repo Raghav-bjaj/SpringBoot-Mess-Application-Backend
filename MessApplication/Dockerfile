@@ -5,11 +5,11 @@ FROM maven:3.9.6-eclipse-temurin-17 AS builder
 WORKDIR /app
 
 # Copy pom.xml and download dependencies
-COPY pom.xml .
+COPY MessApplication/pom.xml .
 RUN mvn dependency:go-offline
 
 # Copy source code and build the JAR
-COPY src ./src
+COPY MessApplication/src ./src
 RUN mvn clean package -DskipTests
 
 # Use a slim Java 17 image for running
